@@ -1,0 +1,692 @@
+@use "../common/mixin"as *;
+@use "../common/variables"as *;
+@use "../common/mq"as *;
+
+textarea {
+
+  resize: none;
+}
+
+
+/*===============================================
+エントリー
+================================================*/
+.entry {
+  // max-width       : 1440px;
+  max-width       : 100%;
+  width           : 100%;
+  background-color: #F6F3EC;
+  margin          : 0 auto;
+  padding         : 72px 0px;
+}
+
+.entry__inner {
+  max-width       : 1140px;
+  width           : 100%;
+  margin          : 0 auto;
+  background-color: #FFFFFF;
+  padding-left    : 20px;
+  padding-right   : 20px;
+  color           : #333333;
+  border-radius   : 15px;
+
+  @include mq(md) {
+    padding-left : 50px;
+    padding-right: 20px;
+  }
+
+  @include mq (slg) {
+
+    padding-left: 100px;
+
+
+  }
+}
+
+.entry__title {
+  padding-top: 98px;
+  font-size  : 24px;
+
+  @include mq(md) {
+    font-size: 36px;
+  }
+
+  & span {
+    &:last-child {
+      color: #FF8A00;
+    }
+  }
+}
+
+.entry-note {
+  padding-top: 59px;
+  line-height: 37.8px;
+  font-size  : 14px;
+
+  br {
+    display: none;
+  }
+
+  @include mq(md) {
+    br {
+      display: initial;
+    }
+  }
+}
+
+/*===============================================
+フォーム
+================================================*/
+
+.entry__form {
+  margin-top: 59px;
+
+}
+
+.entry__form-item {
+  font-size  : 14px;
+  display    : flex;
+  align-items: initial;
+  max-width  : 718px;
+  width      : 100%;
+
+  flex-direction: column;
+
+  @include mq(ml) {
+    flex-direction: row;
+    align-items   : center;
+
+  }
+
+}
+
+.entry__form-heading {
+  display    : flex;
+  align-items: center;
+
+
+}
+
+.requirement {
+  width           : 46px;
+  height          : 27px;
+  background-color: #FF8A00;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  color           : #FFFFFF;
+  font-size       : 14px;
+
+}
+
+.requirement-inactive {
+  width           : 46px;
+  height          : 27px;
+  background-color: #DDDDDD;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  color           : #909090;
+  font-size       : 14px;
+
+}
+
+.entry__form-label {
+  margin-left: 15px;
+}
+
+.entry__form-input-text {
+  height        : 40px;
+  border        : solid 1px #DCDFE6;
+  border-radius : 5px;
+  padding       : 10px 10px 10px 14px;
+  letter-spacing: 2px;
+}
+
+
+.entry__form-input-wrapper {
+  margin-top : 10px;
+  margin-left: 0;
+
+  @include mq(ml) {
+    margin-top: 0;
+
+  }
+}
+
+// 名前
+.entry__form-input-wrapper-name {
+  max-width: 466px;
+  width    : 100%;
+
+  @include mq (ml) {
+    margin-left: 70px;
+
+  }
+
+  @include mq (slg) {
+
+    margin-left: 149px;
+  }
+}
+
+
+.entry__form-input-text-name {
+  width         : 100%;
+  letter-spacing: 2px;
+}
+
+
+// 年齢
+.entry__form-age {
+  margin-top: 61px;
+}
+
+.entry__form-input-wrapper-age {
+  width: 153px;
+
+  @include mq (ml) {
+
+    margin-left: 70px;
+  }
+
+  @include mq (slg) {
+
+    margin-left: 149px;
+  }
+}
+
+.entry__form-input-text-age {
+  width         : 100%;
+  letter-spacing: 2px;
+}
+
+
+// メール
+.entry__form-email {
+  margin-top: 61px;
+}
+
+.entry__form-input-wrapper-email {
+
+  max-width: 466px;
+  width    : 100%;
+
+  @include mq (ml) {
+
+    margin-left: 14px;
+
+  }
+
+  @include mq (slg) {
+
+    margin-left: 93px;
+  }
+}
+
+.entry__form-input-text-email {
+  letter-spacing: 2px;
+  width         : 100%;
+}
+
+
+// 応募種類
+
+.entry__form-occupation {
+  margin-top: 66px;
+
+  @include mq (ml) {
+    margin-top: 0;
+
+  }
+}
+
+.entry__form-occupation .requirement {
+  margin-top: 0px;
+
+  @include mq (ml) {
+    margin-top: -44px;
+
+  }
+}
+
+.entry__form-label--occupation {
+  margin-top: 0px;
+
+  @include mq (ml) {
+    margin-top: -44px;
+
+  }
+}
+
+
+.entry__form-input-occupation-type {
+
+
+  margin-top: 20px;
+
+  @include mq (ml) {
+    margin-top: 0px;
+
+    margin-left: 63px;
+  }
+
+  @include mq (slg) {
+
+    margin-left: 142px;
+  }
+
+  & div {
+    &:first-of-type {
+      margin-top: 0px;
+
+      @include mq (ml) {
+
+        margin-top: 73px;
+
+      }
+    }
+
+    margin-top: 21px;
+
+  }
+
+  & input {
+
+    display: none;
+
+  }
+
+  & label {
+    position      : relative;
+    padding-left  : 37px;
+    letter-spacing: 2px;
+  }
+}
+
+.entry__form-input-occupation-type input[type=radio]+label::before {
+  content      : "";
+  position     : absolute;
+  top          : -5px;
+  left         : -7px;
+  width        : 26px;
+  height       : 26px;
+  border-radius: 50%;
+  border       : 4.5px solid #F3F6FA;
+  line-height  : 1;
+  background   : #F3F6FA;
+}
+
+.entry__form-input-occupation-type input[type=radio]+label::after {
+  display : block;
+  position: absolute;
+  width   : 16px;
+  height  : 16px;
+
+
+}
+
+.entry__form-input-occupation-type input[type=radio]:checked+label::before {
+  opacity   : 1;
+  background: #FF8A00;
+
+}
+
+// 年収
+.entry__form-incom {
+  margin-top: 67px;
+}
+
+.entry__form-input-wrapper-incom {
+  width: 153px;
+
+  @include mq (ml) {
+
+    margin-left: 56px;
+
+  }
+
+  @include mq (slg) {
+
+
+    margin-left: 135px;
+  }
+}
+
+
+.entry__form-input-text-incom {
+  width         : 100%;
+  letter-spacing: 2px;
+}
+
+
+// 実績
+.entry__form-achievement {
+  margin-top: 67px;
+
+}
+
+.entry__form-input-wrapper-achievement {
+
+  max-width: 466px;
+  width    : 100%;
+  height   : 351px;
+
+
+  @include mq (ml) {
+    margin-left: 84px;
+
+  }
+
+  @include mq (slg) {
+
+    margin-left: 163px;
+  }
+
+}
+
+.entry__form-input-text-achievement {
+  width         : 100%;
+  height        : 82.1621%;
+  margin-top    : 25px;
+  letter-spacing: 2px;
+}
+
+.entry__form-input-note-achievement {
+
+  font-size  : 12px;
+  line-height: 18px;
+
+  br {
+    display: none;
+  }
+
+  @include mq(md) {
+    br {
+      display: initial;
+    }
+  }
+}
+
+.entry__form-label-achievement {
+
+  margin-top: 0;
+
+  @include mq (ml) {
+
+    margin-top: -323px;
+  }
+}
+
+.entry__form-achievement .requirement-inactive {
+  margin-top: 0;
+
+  @include mq (ml) {
+
+    margin-top: -323px;
+  }
+}
+
+
+
+// 学歴
+
+.entry__form-background {
+  margin-top: 73px;
+}
+
+.entry__form-input-wrapper-background {
+  max-width: 466px;
+  width    : 100%;
+  height   : 243px;
+
+  @include mq (ml) {
+    margin-left: 84px;
+
+  }
+
+  @include mq (slg) {
+
+    margin-left: 163px;
+  }
+}
+
+.entry__form-input-text-background {
+  width         : 100%;
+  height        : 82.3045%;
+  margin-top    : 25px;
+  letter-spacing: 2px;
+}
+
+.entry__form-input-note-background {
+
+  font-size  : 12px;
+  line-height: 18px;
+
+
+}
+
+.entry__form-label-background {
+
+  margin-top: 0;
+
+  @include mq (ml) {
+
+    margin-top: -230px;
+  }
+}
+
+.entry__form-background .requirement {
+  margin-top: 0;
+
+  @include mq (ml) {
+
+    margin-top: -230px;
+  }
+}
+
+// 自己PR
+
+.entry__form-pr {
+  margin-top: 71px;
+}
+
+.entry__form-input-wrapper-pr {
+  max-width: 466px;
+  width    : 100%;
+  height   : 243px;
+
+  @include mq (ml) {
+
+    margin-left: 65px;
+
+  }
+
+  @include mq (slg) {
+
+    margin-left: 144px;
+  }
+}
+
+.entry__form-input-text-pr {
+  width     : 100%;
+  height    : 82.3045%;
+  margin-top: 25px;
+
+  letter-spacing: 2px;
+}
+
+.entry__form-input-note-pr {
+
+  font-size  : 12px;
+  line-height: 18px;
+
+
+}
+
+.entry__form-label-pr {
+
+  @include mq (ml) {
+    margin-top: -228px;
+
+
+  }
+}
+
+.entry__form-pr .requirement {
+
+  @include mq (ml) {
+
+
+    margin-top: -228px;
+  }
+
+}
+
+
+// 個人情報保護方針
+
+
+.entry__form-policy {
+
+  flex-direction: row;
+}
+
+.entry__form-input-text-policy[type=checkbox] {
+
+
+  display: none;
+
+}
+
+.entry__form-input-text-policy[type=checkbox]+label::before {
+  content      : "";
+  position     : absolute;
+  width        : 16px;
+  height       : 16px;
+  border-radius: 2px;
+  border       : 1px solid #E0E5EB;
+
+  left      : -30px;
+  background: #F9FBFD;
+
+  @include mq(slg) {}
+}
+
+
+.entry__form-input-text-policy[type=checkbox]+label::after {
+  display : block;
+  position: absolute;
+  width   : 16px;
+  height  : 16px;
+
+
+}
+
+.entry__form-input-text-policy[type=checkbox]:checked+label::before {
+  opacity   : 1;
+  background: #FF8A00;
+
+}
+
+
+
+.entry__form-policy {
+  margin-top     : 51px;
+  justify-content: center;
+}
+
+.entry__form-input-note-policy {
+  margin-left: 0;
+  position   : relative;
+
+  @include mq(ml) {
+
+    margin-left: 96px;
+  }
+
+  @include mq(lg) {
+
+    // margin-left: 252px;
+    margin-left: 35.0974%
+  }
+}
+
+
+//エントリーボタン
+
+.entry__form-btn {
+  width         : 380px;
+  position      : relative;
+  margin        : 0 auto;
+  margin-top    : 79px;
+  padding-bottom: 103px;
+  padding-right: 50px;
+}
+
+.entry-btn {
+  display         : inline-block;
+  width           : 100%;
+  height          : 88px;
+  border-radius   : 42px;
+  background-color: #FF8A00;
+  margin          : 20px auto;
+  font-size       : 18px;
+  font-weight     : 700;
+  padding         : 35px 102px;
+  color           : #FFFFFF;
+  cursor          : pointer;
+  opacity         : 1;
+
+  &[disabled] {
+    opacity: 0.3;
+  }
+}
+
+
+
+.entry-btn-arrow {
+  position: absolute;
+  top     : 55px;
+  right   : 24.1%
+}
+
+
+// .entry__form-btn {
+//   position : relative;
+//   max-width: 330px;
+//   width    : 100%;
+// align-items: center;
+// justify-content: center;
+//   @include mq(ml) {
+//     // padding-right: 50px;
+
+//   }
+// }
+
+// .entry-btn {
+//   display         : inline-block;
+//   width           : 100%;
+//   height          : 88px;
+//   border-radius   : 42px;
+//   background-color: #FF8A00;
+//   ;
+//   font-size       : 18px;
+//   font-weight     : 700;
+//   padding         : 35px 102px;
+//   color           : #FFFFFF;
+//   cursor          : pointer;
+//   // opacity         : 1;
+// text-align: center;
+//   // &[disabled] {
+//   //   opacity: 0.3;
+//   // }
+// }
+
+
+
+// .entry-btn-arrow {
+//   position: absolute;
+//   top     : 55px;
+//   right   : 20px;
+// }

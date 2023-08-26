@@ -1,0 +1,37 @@
+@use "../common/mixin"as *;
+@use "../common/variables"as *;
+@use "../common/mq"as *;
+
+textarea {
+
+  resize: none;
+}
+
+
+/*===============================================
+エントリー
+================================================*/
+.thanks{
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.thanks-message{
+  font-size: 32px;
+  font-weight: 700;
+}
+.thanks-btn-top-wrapper{
+  width: 180px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.thanks-btn-top{
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #FF8A00;
+  color: #fff;
+  
+}

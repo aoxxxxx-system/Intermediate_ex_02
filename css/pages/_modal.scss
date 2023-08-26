@@ -1,0 +1,138 @@
+@use "../common/mixin"as *;
+@use "../common/variables"as *;
+@use "../common/mq"as *;
+
+
+
+
+/*===============================================
+=================================================
+全ページ共通
+=================================================
+================================================*/
+
+
+/*===============================================
+モーダル
+================================================*/
+.modal-mypage {
+  outline: none;
+}
+
+.modal-mypage__cover {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index         : 120;
+  width           : 100%;
+  height          : 100vh;
+  position        : fixed;
+
+  
+  display: none;
+  // display: block;
+}
+
+
+.modal-mypage__cover--switch.is-open {
+  display: block;
+}
+
+.modal-mypage__inner {
+  max-width       : 500px;
+  width           : 95%;
+  height          : 439px;
+  background-color: #fff;
+  position        : fixed;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+  opacity         : 1;
+  border          : 1px solid#707070;
+  padding-left    : 20px;
+  padding-right   : 20px;
+
+}
+
+.modal-btn__close {
+
+  width       : 21px;
+  height      : 21px;
+  margin-left : auto;
+  margin-right: 0;
+  padding-top : 20px;
+  cursor      : pointer;
+  ;
+  position     : absolute;
+  padding-right: 0;
+  right        : 20px;
+
+}
+
+/*------------------
+フォーム
+-------------------*/
+.modal-mypage__form-wrapper {
+  margin-top: 40px;
+}
+
+.modal-mypage__title {
+  font-size  : 24px;
+  text-align : center;
+  font-weight: 700;
+}
+
+.modal-mypage__form {
+  margin-top: 29px;
+
+}
+
+
+.modal-mypage__form--submit {
+  text-align: center;
+  margin-top: 34px;
+}
+
+
+.modal-mypage__form-input {
+  display: block;
+}
+
+.modal-mypage__form-input {
+  margin-top: 11px;
+
+} 
+
+.modal-mypage__form-input {
+  max-width   : 460px;
+  width       : 100%;
+  height      : 40px;
+  border      : 1px solid #DCDFE6;
+  color       : #C1C1C1;
+  padding-left: 10px;
+  font-size   : 16px;
+}
+
+.modal-mypage-btn__signin {
+  display         : inline-block;
+  width           : 130px;
+  max-width       : 100%;
+  height          : 38px;
+  padding         : 8.5px 30px;
+  background-color: #1E5099;
+  color           : #FFFFFF;
+  font-size       : 14px;
+  opacity         : 1;
+
+  &[disabled] {
+    opacity: 0.3;
+  }
+}
+
+
+
+
+.modal-mypage__new-register {
+  display   : block;
+  color     : #448AFF;
+  text-align: right;
+  margin-top: 50px;
+}

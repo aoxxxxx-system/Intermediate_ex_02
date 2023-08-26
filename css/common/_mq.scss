@@ -1,0 +1,25 @@
+$breakpoints: ( // 1740px以上 デスクトップPC
+  'xxl'     : '(min-width: 2000px)',
+  // 1280px以上 デスクトップPC
+  'xl' : '(min-width: 1280px)',
+  // 960px以上 ノートPC等の小さなPC
+  'lg' : '(min-width: 960px)',
+
+  // 870px以上 ノートPC等の小さなPC
+  'slg' : '(min-width: 870px)',
+
+  // 720px以上 ノートPC等の小さなPC
+  'ml' : '(min-width:720px)',
+  // 600px以上 タブレット
+  'md' : '(min-width: 600px)',
+  // 480px以上 スマホ
+  'sm' : '(min-width: 480px)',
+
+) !default;
+
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
