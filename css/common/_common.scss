@@ -214,8 +214,7 @@ cta
   color     : #fff;
   height    : 505px;
   width     : 100%;
-  position  : relative;
-  // padding   : 0 20px;
+  position  : relative;  
   text-align: center;
 
   @include mq(md) {
