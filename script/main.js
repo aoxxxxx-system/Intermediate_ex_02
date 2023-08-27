@@ -115,13 +115,3 @@ $(document).ready(function () {
   });
 
 });
-
-// ウインドウ閉じる
-
-// $(function(){
-//   var close = $('#windowclose');
-
-//   close.on('click', function(){
-//       window.open('about:blank','_self').close();      
-//   });
-// });
