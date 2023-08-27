@@ -1,1 +1,4 @@
-# intermediate_ex_02
+#htmlファイルの記述ルール
+
+
+
